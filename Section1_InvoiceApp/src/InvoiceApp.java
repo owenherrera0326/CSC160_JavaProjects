@@ -2,12 +2,12 @@ import java.util.Scanner;
 
 public class InvoiceApp {
 
-/*
+/***********************************************************************************************
  Description: Invoice App that calculates the discount amount of line items inputted by the user
  Programmer: Owen Herrera
  Date: 2023.01.27
  GitHub: https://github.com/owenherrera0326/CSC160_JavaProjects.git
- */
+ **********************************************************************************************/
     public static void main(String[] args) {
      
         // create a Scanner object named sc
@@ -47,6 +47,7 @@ public class InvoiceApp {
             	subtotal += sc.nextDouble();
             }
             
+            //makes the console output look pretty :)
             System.out.println();
             System.out.println("=======================================");
             System.out.println();
@@ -77,6 +78,7 @@ public class InvoiceApp {
             System.out.println(message);
             */
             
+            //display the discount amount and total
             System.out.printf("%20s: %10.2f\n", "Subtotal", subtotal);
             System.out.printf("%20s: %10.2f\n", "Discount percent: ", discountPercent);
             System.out.printf("%20s: %10.2f\n", "Discount amount: ", discountAmount);
@@ -106,10 +108,6 @@ public class InvoiceApp {
         System.out.println(message);
         */
      
-        
-        System.out.println("=======================================");
-        System.out.println();
-        
         System.out.println("Goodbye for now");
         
         sc.close();
