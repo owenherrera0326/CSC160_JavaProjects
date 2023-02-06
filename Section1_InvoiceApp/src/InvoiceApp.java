@@ -80,9 +80,9 @@ public class InvoiceApp {
             
             //display the discount amount and total
             System.out.printf("%20s: %10.2f\n", "Subtotal", subtotal);
-            System.out.printf("%20s: %10.2f\n", "Discount percent: ", discountPercent);
-            System.out.printf("%20s: %10.2f\n", "Discount amount: ", discountAmount);
-            System.out.printf("%20s: %10.2f\n", "Invoice total: ", invoiceDiscountTotal);
+            System.out.printf("%20s: %10.2f\n", "Discount percent", discountPercent);
+            System.out.printf("%20s: %10.2f\n", "Discount amount", discountAmount);
+            System.out.printf("%20s: %10.2f\n", "Invoice total", invoiceDiscountTotal);
             
             
            
