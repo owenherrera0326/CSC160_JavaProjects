@@ -24,10 +24,10 @@ public class BankApp {
 		Account account2 = new Account("Sam", "Smith", 2000.20);
 		BankApp.printAccount(account2);
 		
-		/*
+		
 		// Displaying class level field's value
-		System.out.println("Class level field lastNumber: " + Account.lastNumber);
-		*/
+		System.out.println("Class level field lastNumber: " + Account.getLastNumber());
+
 
 	} // end of main
 	
