@@ -24,6 +24,11 @@ public class Player {
 		this.setJersey(jersey);
 	}
 	
+	public Player(int jersey) throws Exception {
+		this();
+		this.setJersey(jersey);
+	}
+	
 	public String getName() {
 		return this.name;
 	}
@@ -42,5 +47,15 @@ public class Player {
 		else
 			throw new Exception("Invalid jersey number. Must be between 0-99");
 	}
-
+	
+	// equals
+	// return this.fg_pt1 + (this.fg_pt2) + (this.fg_pt3);
+	
+	/*
+	switch(shotType)
+		case1: this.fg_pt1++
+		break;
+	default:
+	throw new Exception Invalid Shot Type
+	*/
 }
