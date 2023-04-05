@@ -1,61 +1,115 @@
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public class Animal {
-	
+
 	private static int counter = 0;
 	
+	private static final DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("MM-dd-yyyy", Locale.US);
+
 	private int id;
-	private final String type;
-	private float weight;
 	
-	SimpleDateFormat formatter = new SimpleDateFormat("mm-dd-yyyy", Locale.ENGLISH);
+	private final String type;
+	
+	private Gender gender;
 	
 	/**
-	 * https://www.baeldung.com/java-string-to-date
-	 * SimpleDateFormat formatter = new SimpleDateFormat("mm-dd-yyyy", Locale.ENGLISH);
-	 * String dateInString = "7-Jun-2013";
-	 * Date date = formatter.parse(dateInString);
-	 */
-	private Date birthdate;
-		
-	public Animal() {
+	 * https://www.baeldung.com/java-creating-localdate-with-values
+	 * https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
+	 */	
+	private LocalDate birthdate;
 	
+	private float weight;
+	
+	public Animal() {
 		this.id = ++Animal.counter;
 		this.type = "Animal";
-		this.weight = 0;
+		this.gender = Gender.UNKNOWN;
 		this.birthdate = null;
+		this.weight = 0;
 	}
 	
-	public Animal(float weight, String birthdate) throws Exception {
+	public <T> Animal(T birthdate, float weight) throws Exception {
 		this();
-		this.setWeight(weight);
 		this.setBirthdate(birthdate);
-		
-	}
-	
-	public Animal(float weight, Date birthdate) throws Exception {
-		this();
 		this.setWeight(weight);
-		this.setBirthdate(birthdate);
-		
-	}
-	
-	public void setBirthdate(String birthdate) throws ParseException {
-		this.birthdate = formatter.parse(birthdate);
-	}
-	
-	public void setBirthdate(Date birthdate) {
-		this.birthdate = birthdate;
 	}
 
-	public void setWeight(float weight) throws Exception {
-		if (weight <= 0) {
-			throw new Exception("Invalid weight: " + weight);
+	public int getId() {
+		return this.id;
+	}
+	
+	public LocalDate getBirthdate() {
+		return this.birthdate;
+	}
+
+	public String getBirthdateStr() {
+		if (this.birthdate == null)
+			return "unknown";
+		else
+			return this.FORMAT.format(this.birthdate);
+	}
+	
+	public Gender getGender() {
+		return this.gender;
+	}
+	
+	public String getType() {
+		return this.getType();
+	}
+	
+	public float getWeight() {
+		return this.weight;
+	}
+	
+	public <T> void setBirthdate(T birthdate) throws Exception {
+
+
+		if (birthdate instanceof String) {
+		    this.birthdate = LocalDate.parse((String) birthdate, this.FORMAT);
+		} else if (birthdate instanceof LocalDate){
+			this.birthdate = (LocalDate) birthdate;
 		} else {
-			this.weight = weight;
+			throw new Exception("Invalid date MM-dd-yyyy: " + birthdate);	
+		}	
+	}
+	
+	public <T>void setGender(T gender) throws Exception {
+		if(gender instanceof String) {
+			String s = (String) gender;
+			
+			switch(s) {
+			case "M":
+			case "Male":
+			case "MALE":
+			case "male":
+				this.gender = Gender.MALE;
+			case "F":
+			case "Female":
+			case "FEMALE":
+			case "female":
+				this.gender = Gender.FEMALE;
+			default:
+				throw new Exception("Invalid gender: " + s);
+			}
+		} else if (gender instanceof Gender) {
+			this.gender = (Gender) gender;
+		} else {
+			throw new Exception("Invalid gender: " + gender);
 		}
+	}
+	
+	public void setWeight(float weight) throws Exception {
+		
+		if (weight > 0)
+			this.weight = weight;
+		else
+			throw new Exception("Invalid weight: " + weight);
+	}
+
+	@Override
+	public String toString() {
+		return this.id + " " + this.type;
 	}
 }
