@@ -1,3 +1,4 @@
+package zoo.animal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
@@ -6,13 +7,13 @@ public class Animal {
 
 	private static int counter = 0;
 	
-	private static final DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("MM-dd-yyyy", Locale.US);
+	protected static final DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("MM-dd-yyyy", Locale.US);
 
-	private int id;
+	protected final int id;
 	
-	private final String type;
+	protected final String type = "animal";
 	
-	private Gender gender;
+	protected Gender gender;
 	
 	/**
 	 * https://www.baeldung.com/java-creating-localdate-with-values
@@ -24,7 +25,6 @@ public class Animal {
 	
 	public Animal() {
 		this.id = ++Animal.counter;
-		this.type = "Animal";
 		this.gender = Gender.UNKNOWN;
 		this.birthdate = null;
 		this.weight = 0;
@@ -48,7 +48,7 @@ public class Animal {
 		if (this.birthdate == null)
 			return "unknown";
 		else
-			return this.FORMAT.format(this.birthdate);
+			return Animal.FORMAT.format(this.birthdate);
 	}
 	
 	public Gender getGender() {
@@ -67,7 +67,7 @@ public class Animal {
 
 
 		if (birthdate instanceof String) {
-		    this.birthdate = LocalDate.parse((String) birthdate, this.FORMAT);
+		    this.birthdate = LocalDate.parse((String) birthdate, Animal.FORMAT);
 		} else if (birthdate instanceof LocalDate){
 			this.birthdate = (LocalDate) birthdate;
 		} else {
@@ -79,17 +79,17 @@ public class Animal {
 		if(gender instanceof String) {
 			String s = (String) gender;
 			
+			s = s.toLowerCase();
+			
 			switch(s) {
-			case "M":
-			case "Male":
-			case "MALE":
+			case "m":
 			case "male":
 				this.gender = Gender.MALE;
-			case "F":
-			case "Female":
-			case "FEMALE":
+				break;
+			case "f":
 			case "female":
 				this.gender = Gender.FEMALE;
+				break;
 			default:
 				throw new Exception("Invalid gender: " + s);
 			}
