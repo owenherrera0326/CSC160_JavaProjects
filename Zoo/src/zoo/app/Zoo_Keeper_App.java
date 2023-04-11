@@ -58,6 +58,21 @@ public class Zoo_Keeper_App {
 			c1.setWingspan((float)10.5);
 			System.out.println(c1.getWingspan());
 			
+			System.out.println();
+			
+			Sparrow s1 = new Sparrow();
+			Sparrow s2 = new Sparrow("12-22-2003", (float) 1.5);
+			Sparrow s3 = new Sparrow("12-22-2003", (float) 1.5, (float)2.2);
+			
+			System.out.println(c1);
+			System.out.println(c2);
+			System.out.println(c3);
+			
+			System.out.println();
+			
+			s1.setWingspan((float)10.5);
+			System.out.println(s1.getWingspan());
+			
 		} catch (Exception e) {
 			System.out.println("The following error has occurred: ");
 			System.out.println(e.getMessage());
