@@ -2,7 +2,7 @@ package zoo.animal;
 
 public class Sparrow extends Bird {
 
-	private final String type = "sparrow";
+	private final String type = "Sparrow";
 
 	public Sparrow() {
 		super();
@@ -14,7 +14,6 @@ public class Sparrow extends Bird {
 
 	public <T> Sparrow(T birthdate, float weight, float wingspan) throws Exception {
 		super(birthdate, weight, wingspan);
-		this.setWingspan(wingspan);
 	}
 	
 	@Override

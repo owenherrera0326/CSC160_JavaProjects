@@ -2,7 +2,7 @@ package zoo.animal;
 
 public class Chicken extends Bird {
 
-	private final String type = "chicken";
+	protected final String type = "Chicken";
 
 	public Chicken() {
 		super();
@@ -14,7 +14,6 @@ public class Chicken extends Bird {
 
 	public <T> Chicken(T birthdate, float weight, float wingspan) throws Exception {
 		super(birthdate, weight, wingspan);
-		this.setWingspan(wingspan);
 	}
 	
 	@Override

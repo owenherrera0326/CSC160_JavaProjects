@@ -3,7 +3,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
-public class Animal {
+public abstract class Animal {
 
 	private static int counter = 0;
 	
@@ -111,5 +111,9 @@ public class Animal {
 	@Override
 	public String toString() {
 		return this.id + " " + this.type;
+	}
+	
+	public abstract void eat() {
+		System.out.println("This " + this.type + "is eating...");
 	}
 }

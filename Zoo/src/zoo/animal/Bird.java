@@ -1,8 +1,8 @@
 package zoo.animal;
 
-public class Bird extends Animal {
+public abstract class Bird extends Animal {
 	
-	private final String type = "bird";
+	protected final String type = "bird";
 	private float wingspan;
 
 	public Bird() {

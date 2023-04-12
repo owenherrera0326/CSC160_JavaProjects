@@ -2,7 +2,7 @@ package zoo.animal;
 
 public class Guppy extends Fish {
 
-	private final String type = "guppy";
+	private final String type = "Guppy";
 
 	public Guppy() {
 		super();
@@ -12,9 +12,8 @@ public class Guppy extends Fish {
 		super(birthdate, weight);
 	}
 
-	public <T> Guppy(T birthdate, float weight, String water) throws Exception {
+	public <T> Guppy(T birthdate, float weight, T water) throws Exception {
 		super(birthdate, weight, water);
-		this.setWater(water);
 	}
 	
 	@Override
