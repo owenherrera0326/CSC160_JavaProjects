@@ -1,6 +1,6 @@
 package zoo.animal;
 
-public class Guppy extends Fish {
+public abstract class Guppy extends Fish {
 
 	private final String type = "Guppy";
 
