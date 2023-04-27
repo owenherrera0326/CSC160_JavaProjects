@@ -1,6 +1,6 @@
 package zoo.animal;
 
-public class Sparrow extends Bird {
+public class Sparrow extends Bird implements Fly {
 
 	private final String type = "Sparrow";
 
@@ -19,6 +19,30 @@ public class Sparrow extends Bird {
 	@Override
 	public String toString() {
 		return this.id + " " + this.type;
+	}
+
+	@Override
+	public void eat() {
+		System.out.println("This " + this.type + "is eating...");
+		
+	}
+
+	@Override
+	public void fly() {
+		System.out.println("This " + this.type + "is flying...");
+		
+	}
+
+	@Override
+	public void soar() {
+		System.out.println("This " + this.type + "is soaring...");
+		
+	}
+
+	@Override
+	public void glide() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

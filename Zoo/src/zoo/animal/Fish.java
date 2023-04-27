@@ -1,6 +1,6 @@
 package zoo.animal;
 
-public abstract class Fish extends Animal {
+public class Fish extends Animal implements Swim  {
 	
 	protected final String type = "Fish";
 	protected Water water;
@@ -55,6 +55,24 @@ public abstract class Fish extends Animal {
 	@Override
 	public String toString() {
 		return this.id + " " + this.type;
+	}
+
+	@Override
+	public void eat() {
+		System.out.println("This " + this.type + "is eating...");
+		
+	}
+
+	@Override
+	public void swim() {
+		System.out.println("This " + this.type + "is swimming...");
+		
+	}
+
+	@Override
+	public void dive() {
+		System.out.println("This " + this.type + "is diving...");
+		
 	}
 	
 }

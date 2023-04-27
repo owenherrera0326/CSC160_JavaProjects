@@ -1,6 +1,6 @@
 package zoo.animal;
 
-public class Chicken extends Bird {
+public class Chicken extends Bird implements Fly {
 
 	protected final String type = "Chicken";
 
@@ -19,6 +19,30 @@ public class Chicken extends Bird {
 	@Override
 	public String toString() {
 		return this.id + " " + this.type;
+	}
+
+	@Override
+	public void eat() {
+		System.out.println("This " + this.type + "is eating...");
+		
+	}
+
+	@Override
+	public void fly() {
+		System.out.println("This " + this.type + "is flying...");
+		
+	}
+
+	@Override
+	public void soar() {
+		System.out.println("This " + this.type + "is soaring...");
+		
+	}
+
+	@Override
+	public void glide() {
+		System.out.println("This " + this.type + "is gliding...");
+		
 	}
 	
 }

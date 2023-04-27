@@ -113,7 +113,5 @@ public abstract class Animal {
 		return this.id + " " + this.type;
 	}
 	
-	public void eat() {
-		System.out.println("This " + this.type + "is eating...");
-	}
+	abstract public void eat();
 }

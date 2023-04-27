@@ -1,6 +1,6 @@
 package zoo.animal;
 
-public class Flying_Fish extends Fish implements Fly {
+public class Flying_Fish extends Fish implements Fly, Swim {
 
 	private final String type = "Flying Fish";
 
@@ -22,20 +22,38 @@ public class Flying_Fish extends Fish implements Fly {
 	}
 
 	@Override
-	public void flying() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void soaring() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void eat() {
-		// TODO Auto-generated method stub
+		System.out.println("This " + this.type + "is eating...");
+		
+	}
+	
+	@Override
+	public void fly() {
+		System.out.println("This " + this.type + "is flying...");
+		
+	}
+
+	@Override
+	public void soar() {
+		System.out.println("This " + this.type + "is soaring...");
+		
+	}
+	
+	@Override
+	public void glide() {
+		System.out.println("This " + this.type + "is gliding...");
+		
+	}
+
+	@Override
+	public void swim() {
+		System.out.println("This " + this.type + "is swimming...");
+		
+	}
+
+	@Override
+	public void dive() {
+		System.out.println("This " + this.type + "is diving...");
 		
 	}
 	
