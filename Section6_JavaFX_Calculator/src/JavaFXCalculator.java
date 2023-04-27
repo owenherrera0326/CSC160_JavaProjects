@@ -9,6 +9,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.Priority;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -20,15 +21,17 @@ public class JavaFXCalculator extends Application {
       "7", "8", "9", "+",
       "4", "5", "6", "-",
       "1", "2", "3", "x",
-      "C", "0", "=", "/" };
-   private double memory = 0.0;
+      "C", "0", "=", "/",
+      "C", "B", "^", "Sqrt",
+      "M+", "M-", "MR", "MC"};
    
    // For computation
-   private double result = 0.0;      // Result of computation
+   private int result = 0;      // Result of computation
    private String inStr = "0";  // Input number as String
    // Previous operator: ' '(nothing), '+', '-', '*', '/', '='
    private char lastOperator = ' ';
-
+   private double memory = 0.0;
+   private Text memoryText = new Text("Memory = 0.0");
    // Event handler for all the 16 Buttons
    EventHandler handler = evt -> {
       String currentBtnLabel = ((Button)evt.getSource()).getText();
@@ -79,22 +82,6 @@ public class JavaFXCalculator extends Application {
             lastOperator = ' ';
             tfDisplay.setText("0");
             break;
-        	
-            /*
-         case "M+":
-        	if (this.lastOperator != '=') {
-        		Double.parseDouble(this.inStr);
-        		//Do the other step
-        		}
-        	else {
-        		
-        	}
-        */
-        
-         case "MC":
-        	 this.memory = 0.0;
-      
-        	 
       }
    };
 

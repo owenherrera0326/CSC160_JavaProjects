@@ -15,27 +15,23 @@ public abstract class Animal {
 	
 	protected Gender gender;
 	
-	/**
-	 * https://www.baeldung.com/java-creating-localdate-with-values
-	 * https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
-	 */	
 	private LocalDate birthdate;
 	
 	private float weight;
 	
 	public Animal() {
-		this.id = ++Animal.counter;
-		this.gender = Gender.UNKNOWN;
-		this.birthdate = null;
-		this.weight = 0;
+	    this.id = ++Animal.counter;    
+	    this.gender = Gender.UNKNOWN;  
+	    this.birthdate = null;         
+	    this.weight = 0;               
 	}
 	
 	public <T> Animal(T birthdate, float weight) throws Exception {
-		this();
-		this.setBirthdate(birthdate);
-		this.setWeight(weight);
+	    this();                  
+	    this.setBirthdate(birthdate);
+	    this.setWeight(weight);
 	}
-
+	
 	public int getId() {
 		return this.id;
 	}
