@@ -204,10 +204,15 @@ public class JavaFXCalculator extends Application {
          switch(btnLabels[i]) {
          case "+": case "-": case "x": case "\u00f7": case "C": case "\u221A":
          case "\u2190": case "^": case ".": case "=":
-        	 btns[i].setStyle("-fx-background-color: cyan");
+        	 btns[i].setStyle("-fx-background-color: orange");
         	 break;
          case "M+": case "M-": case "MR": case "MC":
-        	 btns[i].setStyle("-fx-background-color: lime");
+        	 btns[i].setStyle("-fx-background-color: red");
+        	 break;
+         case "0": case "1": case "2": case "3": case "4": 
+         case "5": case "6": case "7": case "8": case "9":
+        	 btns[i].setStyle("-fx-background-color: yellow");
+        	 break;
          }
       }
 
